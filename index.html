@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master-Dashboard Inscriptions L3 MIAGE 2026 — Florent MINEIRO</title>
+    <title>Pilotage National L3 MIAGE 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #0f3460; --secondary: #16213e; --accent: #2e7d32; --warn: #d32f2f; --bg: #f4f7f6; --white: #ffffff; --border: #e1e8f0; }
+        :root { --primary: #0f3460; --accent: #2e7d32; --warn: #d32f2f; --bg: #f4f7f6; --border: #e1e8f0; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: #334155; line-height: 1.5; padding: 20px; font-size: 9.5pt; }
-        .container { max-width: 1250px; margin: auto; background: var(--white); padding: 35px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: #334155; line-height: 1.5; padding: 20px; font-size: 9pt; }
+        .container { max-width: 1200px; margin: auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
 
-        .header { border-bottom: 3px solid var(--primary); padding-bottom: 15px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: flex-end; }
-        .header h1 { color: var(--primary); font-size: 20pt; font-weight: 700; }
+        .header { border-bottom: 3px solid var(--primary); padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .header h1 { color: var(--primary); font-size: 18pt; margin: 0; }
+        .student-info { text-align: right; color: #64748b; font-size: 8.5pt; }
 
-        .rebound-box { background: #fffbeb; border-left: 5px solid #f59e0b; padding: 15px; border-radius: 4px; margin-bottom: 25px; font-size: 9pt; }
-        h2 { background: var(--primary); color: white; padding: 8px 12px; border-radius: 5px; font-size: 12pt; margin: 25px 0 15px 0; }
+        h2 { background: var(--primary); color: white; padding: 8px 12px; border-radius: 5px; font-size: 11pt; margin: 20px 0 10px 0; }
 
-        table { width: 100%; border-collapse: collapse; margin-bottom: 10px; background: white; }
-        th, td { padding: 10px; text-align: left; border: 1px solid var(--border); font-size: 8.5pt; }
-        th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
+        table { width: 100%; border-collapse: collapse; background: white; margin-bottom: 20px; }
+        th, td { padding: 10px; text-align: left; border: 1px solid var(--border); }
+        th { background: #f8fafc; color: var(--primary); font-weight: 700; font-size: 8.5pt; text-transform: uppercase; }
 
-        .badge { display: inline-block; padding: 3px 8px; border-radius: 15px; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; }
-        .badge-urgent { background: #fee2e2; color: #991b1b; }
-        .badge-process { background: #e0f2fe; color: #0369a1; }
-        .badge-open { background: #dcfce7; color: #166534; }
+        .status { font-weight: 700; font-size: 7.5pt; padding: 3px 8px; border-radius: 10px; text-transform: uppercase; }
+        .open { background: #dcfce7; color: #166534; }
+        .closed { background: #fee2e2; color: #991b1b; }
+        .upcoming { background: #fef3c7; color: #92400e; }
 
-        .date-window { font-size: 8pt; color: #1e293b; font-weight: 600; }
-        .card { background: #f8fafc; border: 1px solid var(--border); padding: 15px; border-radius: 8px; margin-top: 20px; }
-        footer { text-align: center; margin-top: 40px; padding-top: 15px; border-top: 1px solid var(--border); color: #94a3b8; font-size: 7.5pt; }
+        .date-box { font-family: monospace; font-size: 8.5pt; color: #1e293b; }
+        .highlight { color: var(--warn); font-weight: 700; }
+        footer { text-align: center; margin-top: 30px; padding-top: 10px; border-top: 1px solid var(--border); color: #94a3b8; font-size: 7pt; }
     </style>
 </head>
 <body>
@@ -36,139 +36,60 @@
 <div class="container">
     <div class="header">
         <div>
-            <h1>Dashboard : Pilotage Inscriptions L3 MIAGE</h1>
-            <p style="color:#64748b;">Suivi Opérationnel — Session Mars 2026</p>
+            <h1>Dashboard : État des Inscriptions MIAGE 2026</h1>
+            <p>Calendrier exhaustif par établissement et type de parcours</p>
         </div>
-        <div style="text-align: right; font-size: 8.5pt; color: #64748b;">
-            <strong>Candidat :</strong> Florent MINEIRO<br>
-            <strong>Statut :</strong> Étudiant BTS SIO SLAM | <strong>INE :</strong> 090815042EE
+        <div class="student-info">
+            <strong>Candidat :</strong> [VOTRE NOM]<br>
+            <strong>INE :</strong> [VOTRE NUMÉRO INE]
         </div>
     </div>
 
-    <div class="rebound-box">
-        <strong>Point de situation au 19 Mars 2026 :</strong> Les fenêtres d'inscriptions pour l'alternance sont les plus critiques. Pour plusieurs universités (Nanterre, Dauphine), le dépôt doit être validé cette semaine. Ce tableau dissocie les périodes d'ouverture eCandidat des périodes réelles de dépôt par parcours.
-    </div>
-
-    <h2>📅 Calendrier de Dépôt des Dossiers MIAGE</h2>
+    <h2>📅 Calendrier de Recrutement (22 Sites MIAGE)</h2>
     <table>
         <thead>
         <tr>
-            <th>Université (Site MIAGE)</th>
-            <th>Ouverture eCandidat</th>
-            <th>Fenêtre ALTERNANCE (Dépôt)</th>
-            <th>Fenêtre INITIAL (Dépôt)</th>
-            <th>État / Action</th>
+            <th>Université (Site)</th>
+            <th>Ouverture / Fermeture ALTERNANCE</th>
+            <th>Ouverture / Fermeture INITIAL</th>
+            <th>État au 19/03</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td><strong>Paris Nanterre</strong></td>
-            <td>09 Février</td>
-            <td class="date-window">09 Fév. — 22 Mars</td>
-            <td class="date-window">09 Fév. — 08 Mai</td>
-            <td><span class="badge badge-urgent">J-3 (Alternance)</span></td>
-        </tr>
-        <tr>
-            <td><strong>Paris-Dauphine PSL</strong></td>
-            <td>10 Février</td>
-            <td class="date-window">10 Fév. — 27 Mars</td>
-            <td class="date-window">Non applicable (Sess. 1)</td>
-            <td><span class="badge badge-urgent">Clôture Imminente</span></td>
-        </tr>
-        <tr>
-            <td><strong>Paris 1 Sorbonne</strong></td>
-            <td>02 Mars</td>
-            <td class="date-window">02 Mars — 15 Avril</td>
-            <td class="date-window">02 Mars — 04 Mai</td>
-            <td><span class="badge badge-open">Inscriptions Ouvertes</span></td>
-        </tr>
-        <tr>
-            <td><strong>Grenoble Alpes (UGA)</strong></td>
-            <td>16 Février</td>
-            <td class="date-window">16 Fév. — 15 Avril</td>
-            <td class="date-window">16 Fév. — 15 Avril</td>
-            <td><span class="badge badge-process">Saisie Formulaires</span></td>
-        </tr>
-        <tr>
-            <td><strong>Paris Cité</strong></td>
-            <td>16 Mars</td>
-            <td class="date-window">16 Mars — 14 Mai</td>
-            <td class="date-window">16 Mars — 14 Mai</td>
-            <td><span class="badge badge-open">Ouvert</span></td>
-        </tr>
-        <tr>
-            <td><strong>Gustave Eiffel</strong></td>
-            <td>15 Février</td>
-            <td class="date-window">15 Fév. — 30 Mai</td>
-            <td class="date-window">15 Fév. — 30 Mai</td>
-            <td><span class="badge badge-open">Période Large</span></td>
-        </tr>
-        <tr>
-            <td><strong>Lyon 1</strong></td>
-            <td>01 Mars</td>
-            <td class="date-window">01 Mars — 15 Avril</td>
-            <td class="date-window">01 Mars — 15 Avril</td>
-            <td><span class="badge badge-open">Ouvert</span></td>
-        </tr>
-        <tr>
-            <td><strong>Toulouse Capitole</strong></td>
-            <td>25 Février</td>
-            <td class="date-window">25 Fév. — 20 Avril</td>
-            <td class="date-window">25 Fév. — 20 Avril</td>
-            <td><span class="badge badge-open">Ouvert</span></td>
-        </tr>
-        <tr>
-            <td><strong>Nice Côte d'Azur</strong></td>
-            <td>01 Mars</td>
-            <td class="date-window">01 Mars — 30 Avril</td>
-            <td class="date-window">01 Mars — 30 Avril</td>
-            <td><span class="badge badge-open">Ouvert</span></td>
-        </tr>
-        <tr>
-            <td><strong>Bordeaux</strong></td>
-            <td>02 Mars</td>
-            <td class="date-window">02 Mars — 15 Avril</td>
-            <td class="date-window">02 Mars — 15 Avril</td>
-            <td><span class="badge badge-open">Ouvert</span></td>
-        </tr>
-        <tr>
-            <td><strong>Orléans</strong></td>
-            <td>01 Février</td>
-            <td class="date-window">01 Fév. — 15 Juin</td>
-            <td class="date-window">01 Fév. — 15 Juin</td>
-            <td><span class="badge badge-open">Ouvert</span></td>
-        </tr>
-        <tr>
-            <td><strong>Aix-Marseille</strong></td>
-            <td>17 Février</td>
-            <td class="date-window">17 Fév. — 03 Mai</td>
-            <td class="date-window">17 Fév. — 03 Mai</td>
-            <td><span class="badge badge-open">Ouvert</span></td>
-        </tr>
-        <tr>
-            <td><strong>Lille</strong></td>
-            <td>01 Mars</td>
-            <td class="date-window">01 Mars — 31 Mai</td>
-            <td class="date-window">01 Mars — 31 Mai</td>
-            <td><span class="badge badge-open">Ouvert</span></td>
-        </tr>
+        <tr><td><strong>Paris Nanterre</strong></td><td class="date-box closed">Terminé (16/03)</td><td class="date-box">09/03 — 08/05</td><td><span class="status open">Initial Ouvert</span></td></tr>
+        <tr><td><strong>Paris-Dauphine</strong></td><td class="date-box highlight">10/02 — 27/03</td><td class="date-box highlight">10/02 — 27/03</td><td><span class="status open">Sess. 1 Urgente</span></td></tr>
+        <tr><td><strong>Paris Saclay (Orsay)</strong></td><td class="date-box closed">Terminé (15/03)</td><td class="date-box">01/05 — 07/07</td><td><span class="status upcoming">Initial en Mai</span></td></tr>
+        <tr><td><strong>Paris 1 Sorbonne</strong></td><td class="date-box highlight">02/03 — 15/04</td><td class="date-box">02/03 — 04/05</td><td><span class="status open">Ouvert</span></td></tr>
+        <tr><td><strong>Grenoble Alpes</strong></td><td class="date-box">16/02 — 15/04</td><td class="date-box">16/02 — 15/04</td><td><span class="status open">Ouvert</span></td></tr>
+        <tr><td><strong>Rennes 1</strong></td><td class="date-box closed">Terminé</td><td class="date-box">22/04 — 22/05</td><td><span class="status upcoming">Initial à venir</span></td></tr>
+        <tr><td><strong>Nantes</strong></td><td class="date-box closed">Terminé (09/03)</td><td class="date-box">13/05 — 14/06</td><td><span class="status upcoming">Initial en Mai</span></td></tr>
+        <tr><td><strong>Paris Cité</strong></td><td class="date-box">16/03 — 14/05</td><td class="date-box">16/03 — 14/05</td><td><span class="status open">Ouvert</span></td></tr>
+        <tr><td><strong>Gustave Eiffel</strong></td><td class="date-box">27/02 — 30/05</td><td class="date-box">27/02 — 30/05</td><td><span class="status open">Ouvert</span></td></tr>
+        <tr><td><strong>Toulouse Capitole</strong></td><td class="date-box upcoming">27/04 — 15/05</td><td class="date-box upcoming">27/04 — 15/05</td><td><span class="status upcoming">Avril</span></td></tr>
+        <tr><td><strong>Bordeaux</strong></td><td class="date-box upcoming">22/04 — 23/05</td><td class="date-box upcoming">22/04 — 23/05</td><td><span class="status upcoming">Avril</span></td></tr>
+        <tr><td><strong>Lyon 1</strong></td><td class="date-box closed">Sess. 1 Finie</td><td class="date-box upcoming">Sess. 2 en Mai</td><td><span class="status upcoming">Attente S2</span></td></tr>
+        <tr><td><strong>Amiens</strong></td><td class="date-box upcoming">Dès le 23/03</td><td class="date-box upcoming">Dès le 23/03</td><td><span class="status upcoming">Bientôt</span></td></tr>
+        <tr><td><strong>Aix-Marseille</strong></td><td class="date-box">15/04 — 15/05</td><td class="date-box">15/04 — 15/05</td><td><span class="status upcoming">Avril</span></td></tr>
+        <tr><td><strong>Nice Côte d'Azur</strong></td><td class="date-box">01/03 — 30/04</td><td class="date-box">01/03 — 30/04</td><td><span class="status open">Ouvert</span></td></tr>
+        <tr><td><strong>Nancy</strong></td><td class="date-box">15/03 — 30/05</td><td class="date-box">15/03 — 30/05</td><td><span class="status open">Ouvert</span></td></tr>
+        <tr><td><strong>Mulhouse</strong></td><td class="date-box upcoming">01/04 — 15/06</td><td class="date-box upcoming">01/04 — 15/06</td><td><span class="status upcoming">Avril</span></td></tr>
+        <tr><td><strong>Orléans</strong></td><td class="date-box">01/02 — 15/06</td><td class="date-box">01/02 — 15/06</td><td><span class="status open">Ouvert</span></td></tr>
+        <tr><td><strong>Lille</strong></td><td class="date-box">01/03 — 31/05</td><td class="date-box">01/03 — 31/05</td><td><span class="status open">Ouvert</span></td></tr>
+        <tr><td><strong>Antilles</strong></td><td class="date-box">01/04 — 30/06</td><td class="date-box">01/04 — 30/06</td><td><span class="status upcoming">Avril</span></td></tr>
+        <tr><td><strong>La Réunion</strong></td><td class="status open">Ouvert (-> 15/06)</td><td class="status open">Ouvert (-> 15/06)</td><td><span class="status open">Ouvert</span></td></tr>
+        <tr><td><strong>Nouv. Calédonie</strong></td><td class="date-box closed">Terminé</td><td class="date-box closed">Terminé</td><td><span class="status closed">Fermé</span></td></tr>
         </tbody>
     </table>
 
-    <div class="card">
-        <h3>🎯 Synthèse Stratégique</h3>
-        <p style="font-size: 9pt; margin-top: 5px;">
-            Les inscriptions pour le parcours <strong>Alternance</strong> ferment systématiquement plus tôt que le parcours <strong>Initial</strong> en Île-de-France.
-            <br><br>
-            <strong>Priorité 1 :</strong> Validation du dossier Paris Nanterre avant le dimanche 22 mars minuit.
-            <br>
-            <strong>Priorité 2 :</strong> Finalisation du formulaire complémentaire de Grenoble pour la session du 15 avril.
+    <div style="background: #f8fafc; border: 1px solid var(--border); padding: 15px; border-radius: 8px;">
+        <h3 style="font-size: 10pt; color: var(--primary); margin-bottom: 5px;">📍 Synthèse du Plan d'Action</h3>
+        <p style="font-size: 8.5pt;">
+            L'attention doit se porter immédiatement sur <strong>Paris-Dauphine</strong> (clôture le 27 mars) et <strong>Grenoble</strong> (échéance le 15 avril). Pour les sessions fermées en alternance (Nanterre, Saclay), le repli sur le parcours initial reste possible selon les dates indiquées. Les prochaines ouvertures majeures concernent <strong>Amiens</strong> (semaine prochaine) et <strong>Mulhouse/Antilles</strong> (début avril).
         </p>
     </div>
 
     <footer>
-        Rapport MIAGE-Admission-Analyzer v11.0 | Florent MINEIRO | 19 Mars 2026<br>
-        Données consolidées d'après les portails universitaires et le référentiel MIAGE 2026.
+        Système de Monitoring MIAGE v13.0 | Mis à jour le 19 Mars 2026
     </footer>
 </div>
 
