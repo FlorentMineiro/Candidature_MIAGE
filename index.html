@@ -2,131 +2,174 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Dossier Académique - L3 MIAGE 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master-Dashboard Inscriptions L3 MIAGE 2026 — Florent MINEIRO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --main-blue: #1b263b; --light-blue: #415a77; --bg-grey: #f8f9fa; --border: #dee2e6; --success: #2e7d32; --warning: #d32f2f; }
-        @page { size: A4; margin: 1cm; }
-        body { font-family: 'Inter', Arial, sans-serif; color: #333; line-height: 1.4; background: #fff; padding: 20px; font-size: 10pt; }
-        .header { border-bottom: 2px solid var(--main-blue); padding-bottom: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end; }
-        .header h1 { color: var(--main-blue); font-size: 18pt; margin: 0; }
-        .student-info { font-size: 9pt; color: #555; text-align: right; }
+        :root { --primary: #0f3460; --secondary: #16213e; --accent: #2e7d32; --warn: #d32f2f; --bg: #f4f7f6; --white: #ffffff; --border: #e1e8f0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg); color: #334155; line-height: 1.5; padding: 20px; font-size: 9.5pt; }
+        .container { max-width: 1250px; margin: auto; background: var(--white); padding: 35px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
 
-        h2 { background: var(--main-blue); color: white; padding: 6px 12px; font-size: 12pt; border-radius: 4px; margin-top: 25px; }
-        h3 { color: var(--light-blue); border-bottom: 1px solid var(--border); padding-bottom: 3px; margin-top: 15px; font-size: 11pt; }
+        .header { border-bottom: 3px solid var(--primary); padding-bottom: 15px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: flex-end; }
+        .header h1 { color: var(--primary); font-size: 20pt; font-weight: 700; }
 
-        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
-        th { background: var(--bg-grey); color: var(--main-blue); font-weight: 600; text-align: left; padding: 8px; border: 1px solid var(--border); }
-        td { padding: 8px; border: 1px solid var(--border); vertical-align: top; }
-        .avg { font-weight: bold; color: var(--main-blue); }
+        .rebound-box { background: #fffbeb; border-left: 5px solid #f59e0b; padding: 15px; border-radius: 4px; margin-bottom: 25px; font-size: 9pt; }
+        h2 { background: var(--primary); color: white; padding: 8px 12px; border-radius: 5px; font-size: 12pt; margin: 25px 0 15px 0; }
 
-        .tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 8pt; font-weight: bold; text-transform: uppercase; }
-        .tag-alt { background: #e1f5fe; color: #0288d1; }
-        .tag-init { background: #f3e5f5; color: #7b1fa2; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 10px; background: white; }
+        th, td { padding: 10px; text-align: left; border: 1px solid var(--border); font-size: 8.5pt; }
+        th { background: #f1f5f9; color: var(--primary); font-weight: 600; }
 
-        .rebound-box { background: #e8f5e9; border-left: 4px solid var(--success); padding: 12px; margin: 15px 0; font-size: 9.5pt; }
-        .status-open { color: var(--success); font-weight: bold; }
-        .status-urgent { color: var(--warning); font-weight: bold; }
+        .badge { display: inline-block; padding: 3px 8px; border-radius: 15px; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; }
+        .badge-urgent { background: #fee2e2; color: #991b1b; }
+        .badge-process { background: #e0f2fe; color: #0369a1; }
+        .badge-open { background: #dcfce7; color: #166534; }
 
-        .matrix { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .matrix-item { border: 1px solid var(--border); padding: 10px; border-radius: 5px; }
-        .highlight { color: var(--success); font-weight: bold; }
+        .date-window { font-size: 8pt; color: #1e293b; font-weight: 600; }
+        .card { background: #f8fafc; border: 1px solid var(--border); padding: 15px; border-radius: 8px; margin-top: 20px; }
+        footer { text-align: center; margin-top: 40px; padding-top: 15px; border-top: 1px solid var(--border); color: #94a3b8; font-size: 7.5pt; }
     </style>
 </head>
 <body>
 
-<div class="header">
-    <div>
-        <h1>Synthèse de Candidature L3 MIAGE</h1>
-        <p>Expertise Mathématique & Rebond Académique — Florent MINEIRO</p>
+<div class="container">
+    <div class="header">
+        <div>
+            <h1>Dashboard : Pilotage Inscriptions L3 MIAGE</h1>
+            <p style="color:#64748b;">Suivi Opérationnel — Session Mars 2026</p>
+        </div>
+        <div style="text-align: right; font-size: 8.5pt; color: #64748b;">
+            <strong>Candidat :</strong> Florent MINEIRO<br>
+            <strong>Statut :</strong> Étudiant BTS SIO SLAM | <strong>INE :</strong> 090815042EE
+        </div>
     </div>
-    <div class="student-info">
-        <strong>Statut :</strong> Étudiant BTS SIO SLAM (Le Rebours)<br>
-        <strong>Dossier :</strong> 219***** (Masqué) | <strong>Date :</strong> 18 Mars 2026
+
+    <div class="rebound-box">
+        <strong>Point de situation au 19 Mars 2026 :</strong> Les fenêtres d'inscriptions pour l'alternance sont les plus critiques. Pour plusieurs universités (Nanterre, Dauphine), le dépôt doit être validé cette semaine. Ce tableau dissocie les périodes d'ouverture eCandidat des périodes réelles de dépôt par parcours.
     </div>
-</div>
 
-<div class="rebound-box">
-    <strong>Analyse du Rebond :</strong> Le profil démontre une aptitude précoce pour les mathématiques fondamentales à l'UPEC (Moyenne Maths ~17/20). La transition vers le BTS SIO a permis de transformer une lacune technique passée en une spécialisation solide (SLAM), confirmant un profil "Expert" prêt pour la L3 MIAGE.
-</div>
+    <h2>📅 Calendrier de Dépôt des Dossiers MIAGE</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>Université (Site MIAGE)</th>
+            <th>Ouverture eCandidat</th>
+            <th>Fenêtre ALTERNANCE (Dépôt)</th>
+            <th>Fenêtre INITIAL (Dépôt)</th>
+            <th>État / Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><strong>Paris Nanterre</strong></td>
+            <td>09 Février</td>
+            <td class="date-window">09 Fév. — 22 Mars</td>
+            <td class="date-window">09 Fév. — 08 Mai</td>
+            <td><span class="badge badge-urgent">J-3 (Alternance)</span></td>
+        </tr>
+        <tr>
+            <td><strong>Paris-Dauphine PSL</strong></td>
+            <td>10 Février</td>
+            <td class="date-window">10 Fév. — 27 Mars</td>
+            <td class="date-window">Non applicable (Sess. 1)</td>
+            <td><span class="badge badge-urgent">Clôture Imminente</span></td>
+        </tr>
+        <tr>
+            <td><strong>Paris 1 Sorbonne</strong></td>
+            <td>02 Mars</td>
+            <td class="date-window">02 Mars — 15 Avril</td>
+            <td class="date-window">02 Mars — 04 Mai</td>
+            <td><span class="badge badge-open">Inscriptions Ouvertes</span></td>
+        </tr>
+        <tr>
+            <td><strong>Grenoble Alpes (UGA)</strong></td>
+            <td>16 Février</td>
+            <td class="date-window">16 Fév. — 15 Avril</td>
+            <td class="date-window">16 Fév. — 15 Avril</td>
+            <td><span class="badge badge-process">Saisie Formulaires</span></td>
+        </tr>
+        <tr>
+            <td><strong>Paris Cité</strong></td>
+            <td>16 Mars</td>
+            <td class="date-window">16 Mars — 14 Mai</td>
+            <td class="date-window">16 Mars — 14 Mai</td>
+            <td><span class="badge badge-open">Ouvert</span></td>
+        </tr>
+        <tr>
+            <td><strong>Gustave Eiffel</strong></td>
+            <td>15 Février</td>
+            <td class="date-window">15 Fév. — 30 Mai</td>
+            <td class="date-window">15 Fév. — 30 Mai</td>
+            <td><span class="badge badge-open">Période Large</span></td>
+        </tr>
+        <tr>
+            <td><strong>Lyon 1</strong></td>
+            <td>01 Mars</td>
+            <td class="date-window">01 Mars — 15 Avril</td>
+            <td class="date-window">01 Mars — 15 Avril</td>
+            <td><span class="badge badge-open">Ouvert</span></td>
+        </tr>
+        <tr>
+            <td><strong>Toulouse Capitole</strong></td>
+            <td>25 Février</td>
+            <td class="date-window">25 Fév. — 20 Avril</td>
+            <td class="date-window">25 Fév. — 20 Avril</td>
+            <td><span class="badge badge-open">Ouvert</span></td>
+        </tr>
+        <tr>
+            <td><strong>Nice Côte d'Azur</strong></td>
+            <td>01 Mars</td>
+            <td class="date-window">01 Mars — 30 Avril</td>
+            <td class="date-window">01 Mars — 30 Avril</td>
+            <td><span class="badge badge-open">Ouvert</span></td>
+        </tr>
+        <tr>
+            <td><strong>Bordeaux</strong></td>
+            <td>02 Mars</td>
+            <td class="date-window">02 Mars — 15 Avril</td>
+            <td class="date-window">02 Mars — 15 Avril</td>
+            <td><span class="badge badge-open">Ouvert</span></td>
+        </tr>
+        <tr>
+            <td><strong>Orléans</strong></td>
+            <td>01 Février</td>
+            <td class="date-window">01 Fév. — 15 Juin</td>
+            <td class="date-window">01 Fév. — 15 Juin</td>
+            <td><span class="badge badge-open">Ouvert</span></td>
+        </tr>
+        <tr>
+            <td><strong>Aix-Marseille</strong></td>
+            <td>17 Février</td>
+            <td class="date-window">17 Fév. — 03 Mai</td>
+            <td class="date-window">17 Fév. — 03 Mai</td>
+            <td><span class="badge badge-open">Ouvert</span></td>
+        </tr>
+        <tr>
+            <td><strong>Lille</strong></td>
+            <td>01 Mars</td>
+            <td class="date-window">01 Mars — 31 Mai</td>
+            <td class="date-window">01 Mars — 31 Mai</td>
+            <td><span class="badge badge-open">Ouvert</span></td>
+        </tr>
+        </tbody>
+    </table>
 
-<h2>1. Expertise Scientifique : De la Théorie à l'Application</h2>
-
-<div class="matrix">
-    <div class="matrix-item">
-        <h3>Fondamentaux Théoriques (L1 UPEC)</h3>
-        <table>
-            <tr><td>Analyse 1 (Limites, intégration)</td><td class="highlight">17.99 / 20</td></tr>
-            <tr><td>Algèbre 1 (Logique, matrices)</td><td class="highlight">15.99 / 20</td></tr>
-            <tr><td>Algèbre 2 / Analyse 2</td><td class="highlight">16.00 / 20</td></tr>
-            <tr><td>Électrocinétique</td><td class="highlight">15.10 / 20</td></tr>
-        </table>
-        <p style="font-size: 8pt; color: #666; margin-top: 5px;">* L'année a été compromise par les matières transversales (Prog 1 : 1.0, Expression : 4.5), lacunes aujourd'hui résolues via le BTS SIO.</p>
+    <div class="card">
+        <h3>🎯 Synthèse Stratégique</h3>
+        <p style="font-size: 9pt; margin-top: 5px;">
+            Les inscriptions pour le parcours <strong>Alternance</strong> ferment systématiquement plus tôt que le parcours <strong>Initial</strong> en Île-de-France.
+            <br><br>
+            <strong>Priorité 1 :</strong> Validation du dossier Paris Nanterre avant le dimanche 22 mars minuit.
+            <br>
+            <strong>Priorité 2 :</strong> Finalisation du formulaire complémentaire de Grenoble pour la session du 15 avril.
+        </p>
     </div>
-    <div class="matrix-item">
-        <h3>Consolidation Professionnelle (BTS)</h3>
-        <table>
-            <tr><td>Maths Approfondies</td><td class="highlight">19.70 / 20</td></tr>
-            <tr><td>Maths pour Informatique</td><td class="highlight">18.90 / 20</td></tr>
-            <tr><td>Moyenne Cycle BTS (1A)</td><td class="avg">15.48 / 20</td></tr>
-            <tr><td>Classement en Mathématiques</td><td><strong>1<sup>er</sup> / Promotion</strong></td></tr>
-        </table>
-        <p style="font-size: 8pt; color: #666; margin-top: 5px;">Distinction : <strong>Félicitations du Conseil</strong> sur 2 semestres.</p>
-    </div>
-</div>
 
-<h2>2. Cartographie Exhaustive du Réseau & Calendrier 2026</h2>
-<p style="font-size: 8pt; color: #666;">Note : Les dates d'ouverture sont cruciales pour un dépôt précoce.</p>
-
-<table>
-    <thead>
-    <tr>
-        <th>Université MIAGE</th>
-        <th>Ouverture</th>
-        <th>Clôture (Alt / Init)</th>
-        <th>État 18/03</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr><td><strong>Paris-Dauphine PSL</strong></td><td>10 Fév.</td><td class="status-urgent">27 Mars</td><td>Urgent</td></tr>
-    <tr><td><strong>Paris Nanterre</strong></td><td>09 Fév.</td><td class="status-urgent">22 Mars (Alt) / 08 Mai</td><td>J-4 (Alt)</td></tr>
-    <tr><td><strong>Paris 1 Sorbonne</strong></td><td>02 Mars</td><td>15 Avr. (Alt) / 04 Mai</td><td>Ouvert</td></tr>
-    <tr><td><strong>Paris Cité</strong></td><td>16 Mars</td><td>14 Mai</td><td>Ouvert</td></tr>
-    <tr><td><strong>Paris-Saclay (Orsay)</strong></td><td>15 Fév.</td><td>15 Avril</td><td>Ouvert</td></tr>
-    <tr><td><strong>Paris-Saclay (Évry)</strong></td><td>15 Fév.</td><td>30 Avril</td><td>Ouvert</td></tr>
-    <tr><td><strong>Gustave Eiffel (Marne)</strong></td><td>15 Fév.</td><td>30 Mai</td><td>Ouvert</td></tr>
-    <tr><td><strong>Grenoble Alpes</strong></td><td>16 Fév.</td><td>15 Avril</td><td>Ouvert</td></tr>
-    <tr><td><strong>Lyon 1</strong></td><td>01 Mars</td><td>15 Avril</td><td>Ouvert</td></tr>
-    <tr><td><strong>Aix-Marseille</strong></td><td>17 Fév.</td><td>03 Mai</td><td>Ouvert</td></tr>
-    <tr><td><strong>Toulouse Capitole</strong></td><td>25 Fév.</td><td>20 Avril</td><td>Ouvert</td></tr>
-    <tr><td><strong>Nice (Côte d'Azur)</strong></td><td>01 Mars</td><td>30 Avril</td><td>Ouvert</td></tr>
-    <tr><td><strong>Bordeaux</strong></td><td>02 Mars</td><td>15 Avril</td><td>Ouvert</td></tr>
-    <tr><td><strong>Nantes</strong></td><td>01 Mars</td><td>30 Avril</td><td>Ouvert</td></tr>
-    <tr><td><strong>Lille</strong></td><td>01 Mars</td><td>31 Mai</td><td>Ouvert</td></tr>
-    <tr><td><strong>Rennes</strong></td><td>01 Mars</td><td>15 Mai</td><td>Ouvert</td></tr>
-    <tr><td><strong>Nancy (Lorraine)</strong></td><td>17 Fév.</td><td>30 Mai</td><td>Ouvert</td></tr>
-    <tr><td><strong>Orléans</strong></td><td>01 Fév.</td><td>15 Juin</td><td>Ouvert</td></tr>
-    <tr><td><strong>Amiens</strong></td><td>01 Mars</td><td>15 Juin</td><td>Ouvert</td></tr>
-    <tr><td><strong>Mulhouse (UHA)</strong></td><td>01 Mars</td><td>15 Mai</td><td>Ouvert</td></tr>
-    <tr><td><strong>Antilles (Pointe-à-Pitre)</strong></td><td>01 Avril</td><td>30 Juin</td><td>Attente</td></tr>
-    <tr><td><strong>Réunion</strong></td><td>01 Mars</td><td>15 Juin</td><td>Ouvert</td></tr>
-    <tr><td><strong>Nouvelle-Calédonie (Nouméa)</strong></td><td>01 Juin</td><td>Décembre</td><td>Attente</td></tr>
-    </tbody>
-</table>
-
-<h2>3. Stratégie d'Admission</h2>
-<div class="matrix">
-    <div class="matrix-item">
-        <strong>Pourquoi UPEC n'est pas listé ?</strong>
-        <p style="font-size: 9pt;">La MIAGE de l'UPEC (ESIAG) ne recrute qu'en L1 pour son cycle Licence. Pour la L3, les étudiants de l'UPEC postulent prioritairement à <strong>Gustave Eiffel</strong> ou <strong>Paris 1</strong>.</p>
-    </div>
-    <div class="matrix-item">
-        <strong>Argument de vente principal</strong>
-        <p style="font-size: 9pt;">"Maîtrise de l'informatique de gestion (BTS) appuyée par une excellence démontrée en mathématiques universitaires (UPEC)."</p>
-    </div>
-</div>
-
-<div style="text-align: center; color: #999; font-size: 8pt; margin-top: 40px; border-top: 1px solid var(--border); padding-top: 10px;">
-    Rapport MIAGE-Admission-Analyzer v5.0 | Florent MINEIRO | 18/03/2026
+    <footer>
+        Rapport MIAGE-Admission-Analyzer v11.0 | Florent MINEIRO | 19 Mars 2026<br>
+        Données consolidées d'après les portails universitaires et le référentiel MIAGE 2026.
+    </footer>
 </div>
 
 </body>
